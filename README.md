@@ -1,2 +1,2 @@
 # pimcore-shopify-sync
-Modulo Pimcore11 per l'integrazione con Shopify
+Pimcore11 module for Shopify Integration
