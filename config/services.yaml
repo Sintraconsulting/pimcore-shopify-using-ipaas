@@ -18,6 +18,8 @@ services:
 
   SyncShopifyBundle\Installer:
     public: true
+    arguments:
+      $bundle: "@=service('kernel').getBundle('SyncShopifyBundle')"
 
   SyncShopifyBundle\Security\:
     resource: '../src/Security'
