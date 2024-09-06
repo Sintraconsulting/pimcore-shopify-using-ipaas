@@ -21,17 +21,17 @@ class ShopifyVariantTranslation implements IShopifyModel
         ];
     }
 
-    public function addFile(string $fileMetafieldKey, string $fileUrl, string $language): void
+    public function addFile(string $fileMetafieldKey, ?string $fileUrl, string $language): void
     {
         $this->files[$fileMetafieldKey][$language] = $fileUrl;
     }
 
-    public function addMetafield(string $key, string $value, string $language): void
+    public function addMetafield(string $key, ?string $value, string $language): void
     {
         $this->metafields[$key][$language] = $value;
     }
 
-    public function addOptionValue(string $key, string $value, string $language): void
+    public function addOptionValue(string $key, ?string $value, string $language): void
     {
         $this->optionValues[$key][$language] = $value;
     }
