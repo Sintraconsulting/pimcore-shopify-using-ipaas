@@ -1,0 +1,68 @@
+{
+    "parentClass": "",
+    "implementsInterfaces": "",
+    "title": "",
+    "group": "",
+    "layoutDefinitions": {
+        "name": null,
+        "type": null,
+        "region": null,
+        "title": null,
+        "width": 0,
+        "height": 0,
+        "collapsible": false,
+        "collapsed": false,
+        "bodyStyle": null,
+        "datatype": "layout",
+        "children": [
+            {
+                "name": "Image Information",
+                "type": null,
+                "region": null,
+                "title": "",
+                "width": "",
+                "height": "",
+                "collapsible": false,
+                "collapsed": false,
+                "bodyStyle": "",
+                "datatype": "layout",
+                "children": [
+                    {
+                        "name": "image",
+                        "title": "Image",
+                        "tooltip": "",
+                        "mandatory": true,
+                        "noteditable": false,
+                        "index": false,
+                        "locked": false,
+                        "style": "",
+                        "permissions": null,
+                        "fieldtype": "image",
+                        "relationType": false,
+                        "invisible": false,
+                        "visibleGridView": false,
+                        "visibleSearch": false,
+                        "uploadPath": "\/Products",
+                        "width": "",
+                        "height": "",
+                        "datatype": "data"
+                    }
+                ],
+                "locked": false,
+                "fieldtype": "panel",
+                "layout": null,
+                "border": false,
+                "icon": "",
+                "labelWidth": 100,
+                "labelAlign": "left"
+            }
+        ],
+        "locked": false,
+        "fieldtype": "panel",
+        "layout": null,
+        "border": false,
+        "icon": null,
+        "labelWidth": 100,
+        "labelAlign": "left"
+    }
+}
