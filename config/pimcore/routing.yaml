@@ -1,0 +1,5 @@
+sync_shopify_bundle:
+  resource:
+    path: ../../src/Controller/
+    namespace: SyncShopifyBundle\Controller
+  type: attribute

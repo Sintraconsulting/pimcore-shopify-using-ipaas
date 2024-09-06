@@ -1,0 +1,1590 @@
+{
+    "id": "DEFAULT_PROD",
+    "title": "",
+    "description": "",
+    "modificationDate": 1725282740,
+    "parentClass": "",
+    "implementsInterfaces": "",
+    "listingParentClass": "",
+    "useTraits": "",
+    "listingUseTraits": "",
+    "allowInherit": true,
+    "allowVariants": true,
+    "showVariants": true,
+    "layoutDefinitions": {
+        "name": "pimcore_root",
+        "type": null,
+        "region": null,
+        "title": null,
+        "width": 0,
+        "height": 0,
+        "collapsible": false,
+        "collapsed": false,
+        "bodyStyle": null,
+        "datatype": "layout",
+        "children": [
+            {
+                "name": "product_data",
+                "type": null,
+                "region": null,
+                "title": "Dati Prodotto",
+                "width": "",
+                "height": "",
+                "collapsible": false,
+                "collapsed": false,
+                "bodyStyle": "",
+                "datatype": "layout",
+                "children": [
+                    {
+                        "name": "Product Information",
+                        "type": null,
+                        "region": null,
+                        "title": "Informazioni Prodotto",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "isVirtualProduct",
+                                "title": "Is Virtual Product",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "checkbox",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValue": 0,
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            },
+                            {
+                                "name": "isGiftCard",
+                                "title": "Is Gift Card",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "checkbox",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValue": 0,
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            },
+                            {
+                                "name": "sku",
+                                "title": "Sku",
+                                "tooltip": "",
+                                "mandatory": true,
+                                "noteditable": false,
+                                "index": true,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "input",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": true,
+                                "visibleSearch": true,
+                                "defaultValue": null,
+                                "columnLength": 190,
+                                "regex": "",
+                                "regexFlags": [],
+                                "unique": true,
+                                "showCharCount": false,
+                                "width": 300,
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            },
+                            {
+                                "name": "localizedfields",
+                                "title": "Name and Description",
+                                "tooltip": null,
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": null,
+                                "permissions": null,
+                                "fieldtype": "localizedfields",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": true,
+                                "visibleSearch": true,
+                                "children": [
+                                    {
+                                        "name": "name",
+                                        "title": "Product Name",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "input",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValue": null,
+                                        "columnLength": 190,
+                                        "regex": "",
+                                        "regexFlags": [],
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "width": "",
+                                        "defaultValueGenerator": "",
+                                        "datatype": "data"
+                                    },
+                                    {
+                                        "name": "short_description",
+                                        "title": "Short Description",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "textarea",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "maxLength": null,
+                                        "showCharCount": false,
+                                        "excludeFromSearchIndex": false,
+                                        "height": 100,
+                                        "width": 700,
+                                        "datatype": "data"
+                                    },
+                                    {
+                                        "name": "description",
+                                        "title": "Description",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "wysiwyg",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "toolbarConfig": "",
+                                        "excludeFromSearchIndex": false,
+                                        "maxCharacters": 0,
+                                        "height": 300,
+                                        "width": 800,
+                                        "datatype": "data"
+                                    }
+                                ],
+                                "region": null,
+                                "layout": null,
+                                "maxTabs": null,
+                                "border": false,
+                                "provideSplitView": false,
+                                "tabPosition": "top",
+                                "hideLabelsWhenTabsReached": null,
+                                "permissionView": null,
+                                "permissionEdit": null,
+                                "labelWidth": 100,
+                                "labelAlign": "left",
+                                "width": 900,
+                                "height": 550,
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/diamond.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Categorization",
+                        "type": null,
+                        "region": null,
+                        "title": "Categorization",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "brand",
+                                "title": "Brand",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "select",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "options": [
+                                    {
+                                        "key": "Nike",
+                                        "value": "Nike"
+                                    },
+                                    {
+                                        "key": "Ralph Lauren",
+                                        "value": "Ralph Lauren"
+                                    },
+                                    {
+                                        "key": "Hugo Boss",
+                                        "value": "Hugo Boss"
+                                    },
+                                    {
+                                        "key": "Tommy Hilfiger",
+                                        "value": "Tommy Hilfiger"
+                                    },
+                                    {
+                                        "key": "Levi Strauss & Co.",
+                                        "value": "Levi Strauss & Co."
+                                    },
+                                    {
+                                        "key": "Burberry",
+                                        "value": "Burberry"
+                                    },
+                                    {
+                                        "key": "Gucci",
+                                        "value": "Gucci"
+                                    },
+                                    {
+                                        "key": "Adidas",
+                                        "value": "Adidas"
+                                    },
+                                    {
+                                        "key": "Lacoste",
+                                        "value": "Lacoste"
+                                    },
+                                    {
+                                        "key": "Versace",
+                                        "value": "Versace"
+                                    },
+                                    {
+                                        "key": "The North Face",
+                                        "value": "The North Face"
+                                    },
+                                    {
+                                        "key": "Louis Vuitton",
+                                        "value": "Louis Vuitton"
+                                    },
+                                    {
+                                        "key": "Rolex",
+                                        "value": "Rolex"
+                                    },
+                                    {
+                                        "key": "Calvin Klein",
+                                        "value": "Calvin Klein"
+                                    },
+                                    {
+                                        "key": "Diesel",
+                                        "value": "Diesel"
+                                    },
+                                    {
+                                        "key": "Prada",
+                                        "value": "Prada"
+                                    },
+                                    {
+                                        "key": "Armani Exchange",
+                                        "value": "Armani Exchange"
+                                    },
+                                    {
+                                        "key": "Tom Ford",
+                                        "value": "Tom Ford"
+                                    },
+                                    {
+                                        "key": "Zara",
+                                        "value": "Zara"
+                                    },
+                                    {
+                                        "key": "Givenchy",
+                                        "value": "Givenchy"
+                                    },
+                                    {
+                                        "key": "Armani",
+                                        "value": "Armani"
+                                    },
+                                    {
+                                        "key": "Emporio Armani",
+                                        "value": "Emporio Armani"
+                                    },
+                                    {
+                                        "key": "The Timberland Company",
+                                        "value": "The Timberland Company"
+                                    },
+                                    {
+                                        "key": "Champion",
+                                        "value": "Champion"
+                                    },
+                                    {
+                                        "key": "Under Armour",
+                                        "value": "Under Armour"
+                                    },
+                                    {
+                                        "key": "Vans",
+                                        "value": "Vans"
+                                    },
+                                    {
+                                        "key": "H&M",
+                                        "value": "H&M"
+                                    },
+                                    {
+                                        "key": "Guess",
+                                        "value": "Guess"
+                                    },
+                                    {
+                                        "key": "Hollister Co.",
+                                        "value": "Hollister Co."
+                                    },
+                                    {
+                                        "key": "Herm\u00e8s",
+                                        "value": "Herm\u00e8s"
+                                    },
+                                    {
+                                        "key": "Abercrombie & Fitch",
+                                        "value": "Abercrombie & Fitch"
+                                    },
+                                    {
+                                        "key": "J. Crew",
+                                        "value": "J. Crew"
+                                    },
+                                    {
+                                        "key": "Dolce & Gabbana",
+                                        "value": "Dolce & Gabbana"
+                                    },
+                                    {
+                                        "key": "Christian Dior",
+                                        "value": "Christian Dior"
+                                    },
+                                    {
+                                        "key": "Supreme",
+                                        "value": "Supreme"
+                                    },
+                                    {
+                                        "key": "American Eagle Outfitters",
+                                        "value": "American Eagle Outfitters"
+                                    },
+                                    {
+                                        "key": "Michael Kors",
+                                        "value": "Michael Kors"
+                                    },
+                                    {
+                                        "key": "Banana Republic",
+                                        "value": "Banana Republic"
+                                    },
+                                    {
+                                        "key": "Balenciaga",
+                                        "value": "Balenciaga"
+                                    },
+                                    {
+                                        "key": "Fendi",
+                                        "value": "Fendi"
+                                    },
+                                    {
+                                        "key": "Fred Perry",
+                                        "value": "Fred Perry"
+                                    },
+                                    {
+                                        "key": "Stone Island",
+                                        "value": "Stone Island"
+                                    },
+                                    {
+                                        "key": "Converse",
+                                        "value": "Converse"
+                                    },
+                                    {
+                                        "key": "Nautica",
+                                        "value": "Nautica"
+                                    },
+                                    {
+                                        "key": "Off-White",
+                                        "value": "Off-White"
+                                    },
+                                    {
+                                        "key": "Uniqlo",
+                                        "value": "Uniqlo"
+                                    },
+                                    {
+                                        "key": "Patagonia",
+                                        "value": "Patagonia"
+                                    },
+                                    {
+                                        "key": "A Bathing Ape",
+                                        "value": "A Bathing Ape"
+                                    },
+                                    {
+                                        "key": "Gap Inc.",
+                                        "value": "Gap Inc."
+                                    },
+                                    {
+                                        "key": "Cartier",
+                                        "value": "Cartier"
+                                    },
+                                    {
+                                        "key": "Fila",
+                                        "value": "Fila"
+                                    },
+                                    {
+                                        "key": "Puma",
+                                        "value": "Puma"
+                                    },
+                                    {
+                                        "key": "Wrangler",
+                                        "value": "Wrangler"
+                                    },
+                                    {
+                                        "key": "Oakley",
+                                        "value": "Oakley"
+                                    },
+                                    {
+                                        "key": "Vineyard Vines",
+                                        "value": "Vineyard Vines"
+                                    },
+                                    {
+                                        "key": "Lee",
+                                        "value": "Lee"
+                                    },
+                                    {
+                                        "key": "New Balance",
+                                        "value": "New Balance"
+                                    },
+                                    {
+                                        "key": "Marc Jacobs",
+                                        "value": "Marc Jacobs"
+                                    },
+                                    {
+                                        "key": "Salvatore Ferragamo",
+                                        "value": "Salvatore Ferragamo"
+                                    },
+                                    {
+                                        "key": "DKNY",
+                                        "value": "DKNY"
+                                    },
+                                    {
+                                        "key": "Bulgari",
+                                        "value": "Bulgari"
+                                    },
+                                    {
+                                        "key": "Reebok",
+                                        "value": "Reebok"
+                                    },
+                                    {
+                                        "key": "Topman",
+                                        "value": "Topman"
+                                    },
+                                    {
+                                        "key": "Kenneth Cole",
+                                        "value": "Kenneth Cole"
+                                    },
+                                    {
+                                        "key": "Yves Saint Laurent",
+                                        "value": "Yves Saint Laurent"
+                                    },
+                                    {
+                                        "key": "Pull & Bear",
+                                        "value": "Pull & Bear"
+                                    },
+                                    {
+                                        "key": "Palace",
+                                        "value": "Palace"
+                                    },
+                                    {
+                                        "key": "Columbia",
+                                        "value": "Columbia"
+                                    },
+                                    {
+                                        "key": "Carrhart",
+                                        "value": "Carrhart"
+                                    },
+                                    {
+                                        "key": "Kappa",
+                                        "value": "Kappa"
+                                    },
+                                    {
+                                        "key": "A\u00e9ropostale",
+                                        "value": "A\u00e9ropostale"
+                                    },
+                                    {
+                                        "key": "Quicksilver",
+                                        "value": "Quicksilver"
+                                    },
+                                    {
+                                        "key": "Moncler",
+                                        "value": "Moncler"
+                                    },
+                                    {
+                                        "key": "French Connection",
+                                        "value": "French Connection"
+                                    },
+                                    {
+                                        "key": "Ted Baker",
+                                        "value": "Ted Baker"
+                                    },
+                                    {
+                                        "key": "Express",
+                                        "value": "Express"
+                                    },
+                                    {
+                                        "key": "Tiffany & Co.",
+                                        "value": "Tiffany & Co."
+                                    },
+                                    {
+                                        "key": "Massimo Dutti",
+                                        "value": "Massimo Dutti"
+                                    },
+                                    {
+                                        "key": "Gant",
+                                        "value": "Gant"
+                                    },
+                                    {
+                                        "key": "Ellesse",
+                                        "value": "Ellesse"
+                                    },
+                                    {
+                                        "key": "Paul Smith",
+                                        "value": "Paul Smith"
+                                    },
+                                    {
+                                        "key": "Billabong",
+                                        "value": "Billabong"
+                                    },
+                                    {
+                                        "key": "Kenzo",
+                                        "value": "Kenzo"
+                                    },
+                                    {
+                                        "key": "Helly Hansen",
+                                        "value": "Helly Hansen"
+                                    },
+                                    {
+                                        "key": "Clarks",
+                                        "value": "Clarks"
+                                    },
+                                    {
+                                        "key": "Diamond Supply Co.",
+                                        "value": "Diamond Supply Co."
+                                    },
+                                    {
+                                        "key": "Valentino",
+                                        "value": "Valentino"
+                                    },
+                                    {
+                                        "key": "G-Star Raw",
+                                        "value": "G-Star Raw"
+                                    },
+                                    {
+                                        "key": "Ermenegildo Zegna",
+                                        "value": "Ermenegildo Zegna"
+                                    },
+                                    {
+                                        "key": "Scotch & Soda",
+                                        "value": "Scotch & Soda"
+                                    },
+                                    {
+                                        "key": "Forever 21",
+                                        "value": "Forever 21"
+                                    },
+                                    {
+                                        "key": "Hackett London",
+                                        "value": "Hackett London"
+                                    },
+                                    {
+                                        "key": "Louis Phillipe",
+                                        "value": "Louis Phillipe"
+                                    },
+                                    {
+                                        "key": "Marc O'Polo",
+                                        "value": "Marc O'Polo"
+                                    },
+                                    {
+                                        "key": "Everlast",
+                                        "value": "Everlast"
+                                    },
+                                    {
+                                        "key": "Bombay Shades",
+                                        "value": "Bombay Shades"
+                                    },
+                                    {
+                                        "key": "Schott NYC",
+                                        "value": "Schott NYC"
+                                    },
+                                    {
+                                        "key": "Sail Racing",
+                                        "value": "Sail Racing"
+                                    },
+                                    {
+                                        "key": "C&A",
+                                        "value": "C&A"
+                                    },
+                                    {
+                                        "key": "Umbro",
+                                        "value": "Umbro"
+                                    }
+                                ],
+                                "defaultValue": "",
+                                "columnLength": 190,
+                                "dynamicOptions": false,
+                                "defaultValueGenerator": "",
+                                "width": 300,
+                                "optionsProviderType": "configure",
+                                "optionsProviderClass": "",
+                                "optionsProviderData": "",
+                                "datatype": "data"
+                            },
+                            {
+                                "name": "made_in",
+                                "title": "Made In",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "country",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "options": null,
+                                "defaultValue": null,
+                                "columnLength": 190,
+                                "dynamicOptions": false,
+                                "defaultValueGenerator": "",
+                                "width": 300,
+                                "optionsProviderType": null,
+                                "optionsProviderClass": null,
+                                "optionsProviderData": null,
+                                "restrictTo": "",
+                                "datatype": "data"
+                            },
+                            {
+                                "name": "category",
+                                "title": "Category",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "input",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValue": null,
+                                "columnLength": 190,
+                                "regex": "",
+                                "regexFlags": [],
+                                "unique": false,
+                                "showCharCount": false,
+                                "width": "",
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/four-squares.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Attributes",
+                        "type": null,
+                        "region": null,
+                        "title": "Attributes",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "localizedfields",
+                                "title": "",
+                                "tooltip": null,
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": null,
+                                "permissions": null,
+                                "fieldtype": "localizedfields",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": true,
+                                "visibleSearch": true,
+                                "children": [
+                                    {
+                                        "name": "size",
+                                        "title": "Size",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "input",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValue": null,
+                                        "columnLength": 190,
+                                        "regex": "",
+                                        "regexFlags": [],
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "width": "",
+                                        "defaultValueGenerator": "",
+                                        "datatype": "data"
+                                    },
+                                    {
+                                        "name": "color",
+                                        "title": "color",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": false,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "input",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValue": null,
+                                        "columnLength": 190,
+                                        "regex": "",
+                                        "regexFlags": [],
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "width": "",
+                                        "defaultValueGenerator": "",
+                                        "datatype": "data"
+                                    }
+                                ],
+                                "region": null,
+                                "layout": null,
+                                "maxTabs": null,
+                                "border": false,
+                                "provideSplitView": false,
+                                "tabPosition": "top",
+                                "hideLabelsWhenTabsReached": null,
+                                "permissionView": null,
+                                "permissionEdit": null,
+                                "labelWidth": 100,
+                                "labelAlign": "left",
+                                "width": "",
+                                "height": "",
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/bricks.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Images",
+                        "type": null,
+                        "region": null,
+                        "title": "Images",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "images",
+                                "title": "Images",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "fieldcollections",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "allowedTypes": [
+                                    "ImageInfo",
+                                    "ExternalImageInfo"
+                                ],
+                                "lazyLoading": true,
+                                "maxItems": null,
+                                "disallowAddRemove": false,
+                                "disallowReorder": false,
+                                "collapsed": false,
+                                "collapsible": false,
+                                "border": false,
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/image.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Pricing",
+                        "type": null,
+                        "region": null,
+                        "title": "Pricing",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "Layout",
+                                "type": null,
+                                "region": "",
+                                "title": "",
+                                "width": "",
+                                "height": 350,
+                                "collapsible": false,
+                                "collapsed": false,
+                                "bodyStyle": "",
+                                "datatype": "layout",
+                                "children": [
+                                    {
+                                        "name": "EUR",
+                                        "type": null,
+                                        "region": "west",
+                                        "title": "EUR",
+                                        "width": 300,
+                                        "height": "",
+                                        "collapsible": false,
+                                        "collapsed": false,
+                                        "bodyStyle": "",
+                                        "datatype": "layout",
+                                        "children": [
+                                            {
+                                                "name": "price_EUR",
+                                                "title": "Price EUR",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "compareAtPrice_EUR",
+                                                "title": "Compare At Price EUR",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesalePrice_EUR",
+                                                "title": "Wholesale Price EUR",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesaleSupplierPrice_EUR",
+                                                "title": "Wholesale Supplier Price EUR",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "unitPrice_EUR",
+                                                "title": "Unit Price EUR",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            }
+                                        ],
+                                        "locked": false,
+                                        "fieldtype": "panel",
+                                        "layout": null,
+                                        "border": true,
+                                        "icon": "",
+                                        "labelWidth": 100,
+                                        "labelAlign": "left"
+                                    },
+                                    {
+                                        "name": "USD",
+                                        "type": null,
+                                        "region": "west",
+                                        "title": "USD",
+                                        "width": 300,
+                                        "height": "",
+                                        "collapsible": false,
+                                        "collapsed": false,
+                                        "bodyStyle": "",
+                                        "datatype": "layout",
+                                        "children": [
+                                            {
+                                                "name": "price_USD",
+                                                "title": "Price USD",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "compareAtPrice_USD",
+                                                "title": "Compare At Price USD",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesalePrice_USD",
+                                                "title": "Wholesale Price USD",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesaleSupplierPrice_USD",
+                                                "title": "Wholesale Supplier Price USD",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "unitPrice_USD",
+                                                "title": "Unit Price USD",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            }
+                                        ],
+                                        "locked": false,
+                                        "fieldtype": "panel",
+                                        "layout": null,
+                                        "border": true,
+                                        "icon": "",
+                                        "labelWidth": 100,
+                                        "labelAlign": "left"
+                                    },
+                                    {
+                                        "name": "GBP",
+                                        "type": null,
+                                        "region": "west",
+                                        "title": "GBP",
+                                        "width": 300,
+                                        "height": "",
+                                        "collapsible": false,
+                                        "collapsed": false,
+                                        "bodyStyle": "",
+                                        "datatype": "layout",
+                                        "children": [
+                                            {
+                                                "name": "price_GBP",
+                                                "title": "Price GBP",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "compareAtPrice_GBP",
+                                                "title": "Compare At Price GBP",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesalePrice_GBP",
+                                                "title": "Wholesale Price GBP",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "wholesaleSupplierPrice_GBP",
+                                                "title": "Wholesale Supplier Price GBP",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            },
+                                            {
+                                                "name": "unitPrice_GBP",
+                                                "title": "Unit Price GBP",
+                                                "tooltip": "",
+                                                "mandatory": false,
+                                                "noteditable": false,
+                                                "index": false,
+                                                "locked": false,
+                                                "style": "",
+                                                "permissions": null,
+                                                "fieldtype": "numeric",
+                                                "relationType": false,
+                                                "invisible": false,
+                                                "visibleGridView": false,
+                                                "visibleSearch": false,
+                                                "defaultValue": null,
+                                                "integer": false,
+                                                "unsigned": false,
+                                                "minValue": null,
+                                                "maxValue": null,
+                                                "unique": false,
+                                                "decimalSize": null,
+                                                "decimalPrecision": null,
+                                                "width": 150,
+                                                "defaultValueGenerator": "",
+                                                "datatype": "data"
+                                            }
+                                        ],
+                                        "locked": false,
+                                        "fieldtype": "panel",
+                                        "layout": null,
+                                        "border": true,
+                                        "icon": "",
+                                        "labelWidth": 100,
+                                        "labelAlign": "left"
+                                    }
+                                ],
+                                "locked": false,
+                                "fieldtype": "region",
+                                "icon": ""
+                            },
+                            {
+                                "name": "isFreeGift",
+                                "title": "Is Free Gift",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "checkbox",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValue": null,
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/currency_exchange.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Packaging",
+                        "type": null,
+                        "region": null,
+                        "title": "Packaging",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "ean",
+                                "title": "EAN Code",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "input",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "defaultValue": null,
+                                "columnLength": 190,
+                                "regex": "",
+                                "regexFlags": [],
+                                "unique": false,
+                                "showCharCount": false,
+                                "width": "",
+                                "defaultValueGenerator": "",
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/deployment.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    },
+                    {
+                        "name": "Synchronization Information",
+                        "type": null,
+                        "region": null,
+                        "title": "Synchronization Information",
+                        "width": "",
+                        "height": "",
+                        "collapsible": false,
+                        "collapsed": false,
+                        "bodyStyle": "",
+                        "datatype": "layout",
+                        "children": [
+                            {
+                                "name": "localizedfields",
+                                "title": "Handle",
+                                "tooltip": null,
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": null,
+                                "permissions": null,
+                                "fieldtype": "localizedfields",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": true,
+                                "visibleSearch": true,
+                                "children": [
+                                    {
+                                        "name": "handle",
+                                        "title": "Handle",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": true,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "input",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValue": null,
+                                        "columnLength": 190,
+                                        "regex": "",
+                                        "regexFlags": [],
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "width": 400,
+                                        "defaultValueGenerator": "",
+                                        "datatype": "data"
+                                    },
+                                    {
+                                        "name": "handle404",
+                                        "title": "404 Handle",
+                                        "tooltip": "",
+                                        "mandatory": false,
+                                        "noteditable": false,
+                                        "index": true,
+                                        "locked": false,
+                                        "style": "",
+                                        "permissions": null,
+                                        "fieldtype": "input",
+                                        "relationType": false,
+                                        "invisible": false,
+                                        "visibleGridView": false,
+                                        "visibleSearch": false,
+                                        "defaultValue": null,
+                                        "columnLength": 190,
+                                        "regex": "",
+                                        "regexFlags": [],
+                                        "unique": false,
+                                        "showCharCount": false,
+                                        "width": 400,
+                                        "defaultValueGenerator": "",
+                                        "datatype": "data"
+                                    }
+                                ],
+                                "region": null,
+                                "layout": null,
+                                "maxTabs": null,
+                                "border": false,
+                                "provideSplitView": false,
+                                "tabPosition": "top",
+                                "hideLabelsWhenTabsReached": null,
+                                "permissionView": null,
+                                "permissionEdit": null,
+                                "labelWidth": 100,
+                                "labelAlign": "left",
+                                "width": 750,
+                                "height": 200,
+                                "datatype": "data"
+                            }
+                        ],
+                        "locked": false,
+                        "fieldtype": "panel",
+                        "layout": null,
+                        "border": false,
+                        "icon": "\/bundles\/pimcoreadmin\/img\/flat-color-icons\/electrical_sensor.svg",
+                        "labelWidth": 100,
+                        "labelAlign": "left"
+                    }
+                ],
+                "locked": false,
+                "fieldtype": "tabpanel",
+                "border": false,
+                "tabPosition": "top"
+            }
+        ],
+        "locked": false,
+        "fieldtype": "panel",
+        "layout": null,
+        "border": false,
+        "icon": null,
+        "labelWidth": 100,
+        "labelAlign": "left"
+    },
+    "icon": "",
+    "group": "",
+    "showAppLoggerTab": false,
+    "linkGeneratorReference": "",
+    "previewGeneratorReference": "",
+    "compositeIndices": [],
+    "showFieldLookup": false,
+    "propertyVisibility": {
+        "grid": {
+            "id": true,
+            "key": false,
+            "path": true,
+            "published": true,
+            "modificationDate": true,
+            "creationDate": true
+        },
+        "search": {
+            "id": true,
+            "key": false,
+            "path": true,
+            "published": true,
+            "modificationDate": true,
+            "creationDate": true
+        }
+    },
+    "enableGridLocking": false
+}
