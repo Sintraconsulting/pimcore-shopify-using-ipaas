@@ -3,21 +3,23 @@
     "description": "A Pimcore's bundle for products, prices and translation sync using ipaas",
     "license": "GPL-3.0-or-later",
     "type": "pimcore-bundle",
-   
-  "config": {
-    "discard-changes": true
-  },
-  "autoload": {
-    "psr-4": {
-      "Product\\": "./"
+    "config": {
+        "discard-changes": true
     },
-    "exclude-from-classmap": [
-      "vendor/phpunit"
-    ]
-  },
-  "require": {
-    "pimcore/pimcore": "^11.0"
-  },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "SyncShopifyBundle\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "vendor/phpunit"
+        ]
+    },
+    "require": {
+        "php": "^8.2",
+        "pimcore/pimcore": "^11.0"
+    },
     "extra": {
         "pimcore": {
             "bundles": [
@@ -25,7 +27,7 @@
             ]
         }
     },
-  "require-dev": {
-    "symfony/phpunit-bridge": "*"
-  }
+    "require-dev": {
+        "symfony/phpunit-bridge": "*"
+    }
 }
