@@ -851,8 +851,7 @@
                                 "visibleGridView": false,
                                 "visibleSearch": false,
                                 "allowedTypes": [
-                                    "ImageInfo",
-                                    "ExternalImageInfo"
+                                    "ImageInfo"
                                 ],
                                 "lazyLoading": true,
                                 "maxItems": null,
