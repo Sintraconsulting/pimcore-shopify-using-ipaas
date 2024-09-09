@@ -8,9 +8,9 @@ class ShopifyTranslation implements IShopifyModel
 {
     private ?string $sku = null;
     private array $title = [];
-    private array $bodyHtml = [];
+    private array $description = [];
     private array $handle = [];
-    private array $productType = [];
+    private array $type = [];
     private array $files = [];
     private array $metafields = [];
 
@@ -22,9 +22,9 @@ class ShopifyTranslation implements IShopifyModel
         return [
             'sku' => $this->sku,
             'title' => $this->title,
-            'body_html' => $this->bodyHtml,
+            'description' => $this->description,
             'handle' => $this->handle,
-            'product_type' => $this->productType,
+            'type' => $this->type,
             'files' => $this->files,
             'metafields' => $this->metafields,
             'variants' => array_map(function (ShopifyVariantTranslation $variant) {
@@ -39,9 +39,9 @@ class ShopifyTranslation implements IShopifyModel
         $this->title[$language] = $title;
     }
 
-    public function addBodyHtml(?string $bodyHtml, string $language): void
+    public function addDescription(?string $bodyHtml, string $language): void
     {
-        $this->bodyHtml[$language] = $bodyHtml;
+        $this->description[$language] = $bodyHtml;
     }
 
     public function addHandle(?string $handle, string $language): void
@@ -49,9 +49,9 @@ class ShopifyTranslation implements IShopifyModel
         $this->handle[$language] = $handle;
     }
 
-    public function addProductType(?string $productType, string $language): void
+    public function addType(?string $productType, string $language): void
     {
-        $this->productType[$language] = $productType;
+        $this->type[$language] = $productType;
     }
 
     public function addFile(string $fileMetafieldKey, string $fileUrl, string $language): void
@@ -108,9 +108,9 @@ class ShopifyTranslation implements IShopifyModel
         return $this->variants;
     }
 
-    public function getBodyHtml(): array
+    public function getDescription(): array
     {
-        return $this->bodyHtml;
+        return $this->description;
     }
 
     public function getHandle(): array
@@ -118,9 +118,9 @@ class ShopifyTranslation implements IShopifyModel
         return $this->handle;
     }
 
-    public function getProductType(): array
+    public function getType(): array
     {
-        return $this->productType;
+        return $this->type;
     }
 
 }
