@@ -28,7 +28,7 @@ class SyncProductController extends FrontendController
             $limit = (int)$request->get("limit");
 
             $products = $productService->getProductsToSync($mapperServiceKey, $limit);
-            return new JsonResponse(["data" => $products]);
+            return new JsonResponse($products);
         } catch (Throwable $th) {
             $this->logger->error("Error to get products, message: {$th->getMessage()}");
             return new JsonResponse("Error: {$th->getMessage()}", Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -43,7 +43,7 @@ class SyncProductController extends FrontendController
             $limit = (int)$request->get("limit");
 
             $translations = $translationService->getTranslationsToSync($mapperServiceKey, $limit);
-            return new JsonResponse(["data" => $translations]);
+            return new JsonResponse($translations);
         } catch (Throwable $th) {
             $this->logger->error("Error to get translations, message: {$th->getMessage()}");
             return new JsonResponse("Error: {$th->getMessage()}", Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -58,7 +58,7 @@ class SyncProductController extends FrontendController
             $limit = (int)$request->get("limit");
 
             $prices = $priceService->getPricesToSync($mapperServiceKey, $limit);
-            return new JsonResponse(["data" => $prices]);
+            return new JsonResponse($prices);
         } catch (Throwable $th) {
             $this->logger->error("Error to get prices, message: {$th->getMessage()}");
             return new JsonResponse("Error: {$th->getMessage()}", Response::HTTP_INTERNAL_SERVER_ERROR);
