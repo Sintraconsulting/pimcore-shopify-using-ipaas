@@ -34,22 +34,22 @@ class ShopifyTranslation implements IShopifyModel
         ];
     }
 
-    public function addTitle(string $title, string $language): void
+    public function addTitle(?string $title, string $language): void
     {
         $this->title[$language] = $title;
     }
 
-    public function addBodyHtml(string $bodyHtml, string $language): void
+    public function addBodyHtml(?string $bodyHtml, string $language): void
     {
         $this->bodyHtml[$language] = $bodyHtml;
     }
 
-    public function addHandle(string $handle, string $language): void
+    public function addHandle(?string $handle, string $language): void
     {
         $this->handle[$language] = $handle;
     }
 
-    public function addProductType(string $productType, string $language): void
+    public function addProductType(?string $productType, string $language): void
     {
         $this->productType[$language] = $productType;
     }
@@ -59,7 +59,7 @@ class ShopifyTranslation implements IShopifyModel
         $this->files[$fileMetafieldKey][$language] = $fileUrl;
     }
 
-    public function addMetafield(string $key, string $value, string $language): void
+    public function addMetafield(string $key, ?string $value, string $language): void
     {
         $this->metafields[$key][$language] = $value;
     }

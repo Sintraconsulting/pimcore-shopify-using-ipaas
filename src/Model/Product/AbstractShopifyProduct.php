@@ -49,7 +49,7 @@ class AbstractShopifyProduct
         $this->media = array_merge($this->media, $shopifyProductMedias);
     }
 
-    public function addMetafield(string $key, string $value): void
+    public function addMetafield(string $key, ?string $value): void
     {
         $this->metafields[$key] = $value;
     }

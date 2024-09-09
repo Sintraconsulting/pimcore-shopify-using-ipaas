@@ -4,6 +4,7 @@ namespace SyncShopifyBundle\Service\Product;
 
 use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\DataObject\Concrete;
+use Pimcore\Model\DataObject\DefaultProduct;
 use Pimcore\Model\DataObject\Fieldcollection\Data\ImageInfo;
 use Pimcore\Model\DataObject\Product;
 use Pimcore\Tool;
@@ -49,10 +50,10 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
     }
 
     /**
-     * @param Product $product
+     * @param DefaultProduct $product
      * @return ShopifyProductMedia[]
      */
-    private function getMedias(Product $product): array
+    private function getMedias(DefaultProduct $product): array
     {
         $images = $product->getImages();
         if (empty($images)) {

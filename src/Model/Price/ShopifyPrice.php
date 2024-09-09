@@ -10,7 +10,7 @@ class ShopifyPrice implements IShopifyModel
     private ?string $priceListId;
     private ?string $marketId;
     private float $price;
-    private float $compareAtPrice;
+    private ?float $compareAtPrice;
 
     public function getAsArray(): array
     {
@@ -75,7 +75,7 @@ class ShopifyPrice implements IShopifyModel
         return $this->compareAtPrice;
     }
 
-    public function setCompareAtPrice(float $compareAtPrice): void
+    public function setCompareAtPrice(?float $compareAtPrice): void
     {
         $this->compareAtPrice = $compareAtPrice;
     }
