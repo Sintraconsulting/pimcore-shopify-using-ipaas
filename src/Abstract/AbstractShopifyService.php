@@ -9,6 +9,7 @@ class AbstractShopifyService
 {
     const ETAG_SUFFIX = '_etag';
     const LAST_MODIFICATION_DATE_SUFFIX = '_last_modification_date';
+    const SETTINGS_STORE_SCOPE = 'SyncShopifyBundle';
 
     public function __construct(
         protected Connection      $connection,
@@ -21,10 +22,11 @@ class AbstractShopifyService
         if (!is_null($newModificationDate)) {
             $this->connection->executeQuery("
             INSERT INTO settings_store (id, scope, data, type) 
-            VALUES( ?, 'ShopifySyncBundle', ?, 'int')
+            VALUES( ?, ?, ?, 'int')
             ON DUPLICATE KEY UPDATE  data = ?
         ", [
                 $this->getSettingsStoreKey($mapperServiceKey),
+                self::SETTINGS_STORE_SCOPE,
                 $newModificationDate,
                 $newModificationDate
             ]);
@@ -111,8 +113,11 @@ class AbstractShopifyService
         $result = $this->connection->fetchOne("
             SELECT data
             FROM settings_store
-            WHERE scope = 'ShopifySyncBundle' AND id = ?
-        ", [$this->getSettingsStoreKey($mapperServiceKey)]);
+            WHERE scope = ? AND id = ?
+        ", [
+            self::SETTINGS_STORE_SCOPE,
+            $this->getSettingsStoreKey($mapperServiceKey)
+        ]);
 
         return is_bool($result) ? 0 : $result;
     }
