@@ -31,7 +31,9 @@ Per estendere la libreria con un mapper custom è necessario implementare l'inte
 
 I metodi da implementare sono:
 
-- `getMapperServiceKey()`: La chiave che lega l'header della chiamata agli endpoint, per scegliere il servizio corretto
+- `getMapperServiceKey()`: La chiave passata come query parameter `mapper-service-key` nella chiamata agli endpoint, per
+  scegliere il
+  servizio corretto
   di
   mappatura
 - `getProductClassId()`: La classe del dataobject pimcore del prodotto

@@ -2,6 +2,7 @@
 
 namespace SyncShopifyBundle\Model\Product;
 
+use stdClass;
 use SyncShopifyBundle\Model\IShopifyModel;
 
 class ShopifyProductVariant extends AbstractShopifyProduct implements IShopifyModel
@@ -12,17 +13,22 @@ class ShopifyProductVariant extends AbstractShopifyProduct implements IShopifyMo
 
     public function getAsArray(): array
     {
-        return [
+        $array = [
             'sku' => $this->sku,
-            'sortingNumber' => $this->sortingNumber,
             'barcode' => $this->barcode,
             'price' => $this->price,
             'optionValues' => $this->optionValues,
             'media' => array_map(function (ShopifyProductMedia $media) {
                 return $media->getAsArray();
             }, $this->media),
-            'metafields' => $this->metafields,
+            'metafields' => !empty($this->metafields) ? $this->metafields : new stdClass(),
         ];
+
+        if (!is_null($this->sortingNumber)) {
+            $array['sortingNumber'] = $this->sortingNumber;
+        }
+
+        return $array;
     }
 
     public function getSortingNumber(): string

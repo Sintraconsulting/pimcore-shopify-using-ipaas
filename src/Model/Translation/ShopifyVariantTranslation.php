@@ -2,6 +2,7 @@
 
 namespace SyncShopifyBundle\Model\Translation;
 
+use stdClass;
 use SyncShopifyBundle\Model\IShopifyModel;
 
 class ShopifyVariantTranslation implements IShopifyModel
@@ -15,8 +16,8 @@ class ShopifyVariantTranslation implements IShopifyModel
     {
         return [
             'sku' => $this->sku,
-            'files' => $this->files,
-            'metafields' => $this->metafields,
+            'files' => !empty($this->files) ? $this->files : new stdClass(),
+            'metafields' => !empty($this->metafields) ? $this->metafields : new stdClass(),
             'optionValues' => $this->optionValues,
         ];
     }
