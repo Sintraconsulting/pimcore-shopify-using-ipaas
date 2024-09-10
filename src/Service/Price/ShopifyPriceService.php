@@ -8,6 +8,7 @@ use Pimcore\Model\DataObject\Concrete;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
 use SyncShopifyBundle\Abstract\AbstractShopifyService;
+use SyncShopifyBundle\Exception\IgnoreDataObjectMappingException;
 use SyncShopifyBundle\Model\Price\ShopifyPrice;
 use Throwable;
 use Traversable;
@@ -49,6 +50,8 @@ class ShopifyPriceService extends AbstractShopifyService
                 if (count($mappedProducts) == $limit) {
                     break;
                 }
+            } catch (IgnoreDataObjectMappingException) {
+                // Do nothing
             } catch (Throwable $th) {
                 $this->logger->error("Error mapping product id: {$productId['id']}, mapper service key: {$mapperServiceKey}, 
                 error message: {$th->getMessage()}");

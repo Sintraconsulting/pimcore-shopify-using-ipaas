@@ -37,7 +37,8 @@ I metodi da implementare sono:
   di
   mappatura
 - `getProductClassId()`: La classe del dataobject pimcore del prodotto
-- `getMappedProduct()`: Il modello specifico del flusso mappato con il prodotto
+- `getMappedProduct()`: Restituisce il modello specifico del flusso mappato con il prodotto, è possibile escludere il
+  dataobject lanciando l'eccezione `IgnoreDataObjectMappingException`
 
 #### Query Prodotti
 
