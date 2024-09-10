@@ -32,10 +32,10 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
         /** @var Product $product */
 
         $shopifyProductModel->setSku($product->getSku());
-        $shopifyProductModel->setTitle($product->getName("it"));
+        $shopifyProductModel->setTitle($product->getName());
         $shopifyProductModel->setDescription($product->getDescription());
         $shopifyProductModel->setPrice($product->getPrice_EUR());
-        $shopifyProductModel->setHandle($product->getHandle("it"));
+        $shopifyProductModel->setHandle($product->getHandle());
         $shopifyProductModel->addMedias($this->getMedias($product));
         $shopifyProductModel->addMetafield("made_in", $product->getMade_in());
         $shopifyProductModel->addTag($product->getBrand());

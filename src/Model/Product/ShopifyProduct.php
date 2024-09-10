@@ -2,6 +2,7 @@
 
 namespace SyncShopifyBundle\Model\Product;
 
+use stdClass;
 use SyncShopifyBundle\Model\IShopifyModel;
 
 class ShopifyProduct extends AbstractShopifyProduct implements IShopifyModel
@@ -31,8 +32,8 @@ class ShopifyProduct extends AbstractShopifyProduct implements IShopifyModel
             'type' => $this->type,
             'markets' => $this->markets,
             'tags' => $this->tags,
-            'files' => $this->files,
-            'metafields' => $this->metafields,
+            'files' => !empty($this->files) ? $this->files : new stdClass(),
+            'metafields' => !empty($this->metafields) ? $this->metafields : new stdClass(),
             'media' => array_map(function (ShopifyProductMedia $media) {
                 return $media->getAsArray();
             }, $this->media),

@@ -29,6 +29,10 @@ class DefaultShopifyTranslationMapper implements IShopifyTranslationMapper
 
         $shopifyTranslationModel->setSku($product->getSku());
 
+        $shopifyTranslationModel->addTitle($product->getName("en"), "en");
+        $shopifyTranslationModel->addTitle($product->getName("de"), "de");
+        $shopifyTranslationModel->addTitle($product->getName("fr"), "fr");
+
         $shopifyTranslationModel->addDescription($product->getDescription("en"), "en");
         $shopifyTranslationModel->addDescription($product->getDescription("de"), "de");
         $shopifyTranslationModel->addDescription($product->getDescription("fr"), "fr");

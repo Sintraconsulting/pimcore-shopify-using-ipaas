@@ -2,6 +2,7 @@
 
 namespace SyncShopifyBundle\Model\Translation;
 
+use stdClass;
 use SyncShopifyBundle\Model\IShopifyModel;
 
 class ShopifyTranslation implements IShopifyModel
@@ -21,12 +22,12 @@ class ShopifyTranslation implements IShopifyModel
     {
         return [
             'sku' => $this->sku,
-            'title' => $this->title,
-            'description' => $this->description,
-            'handle' => $this->handle,
-            'type' => $this->type,
-            'files' => $this->files,
-            'metafields' => $this->metafields,
+            'title' => !empty($this->title) ? $this->title : new stdClass(),
+            'description' => !empty($this->description) ? $this->description : new stdClass(),
+            'handle' => !empty($this->handle) ? $this->handle : new stdClass(),
+            'type' => !empty($this->type) ? $this->type : new stdClass(),
+            'files' => !empty($this->files) ? $this->files : new stdClass(),
+            'metafields' => !empty($this->metafields) ? $this->metafields : new stdClass(),
             'variants' => array_map(function (ShopifyVariantTranslation $variant) {
                 return $variant->getAsArray();
             }, $this->variants),
