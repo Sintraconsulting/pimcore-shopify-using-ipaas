@@ -37,11 +37,11 @@ class Installer extends SettingsStoreAwareInstaller
         if (empty($fieldCollection)) {
             $fieldCollection = new Definition();
             $fieldCollection->setKey("ImageInfo");
-
-            $json = file_get_contents(self::IMAGE_INFO_FILE);
-
-            Service::importFieldCollectionFromJson($fieldCollection, $json);
         }
+
+        $json = file_get_contents(self::IMAGE_INFO_FILE);
+
+        Service::importFieldCollectionFromJson($fieldCollection, $json);
     }
 
     private function installDataObjects(): void
@@ -51,10 +51,10 @@ class Installer extends SettingsStoreAwareInstaller
             $class = ClassDefinition::create([
                 "name" => "DefaultProduct",
             ]);
-
-            $json = file_get_contents(self::DEFAULT_PRODUCT_FILE);
-
-            Service::importClassDefinitionFromJson($class, $json);
         }
+
+        $json = file_get_contents(self::DEFAULT_PRODUCT_FILE);
+
+        Service::importClassDefinitionFromJson($class, $json);
     }
 }
