@@ -32,18 +32,20 @@ Per estendere la libreria con un mapper custom è necessario implementare l'inte
 I metodi da implementare sono:
 
 - `getMapperServiceKey()`: La chiave passata come query parameter `mapper-service-key` nella chiamata agli endpoint, per
-  scegliere il
-  servizio corretto
-  di
-  mappatura
+  scegliere il servizio corretto di mappatura
 - `getProductClassId()`: La classe del dataobject pimcore del prodotto
+- `getShopifyChannelKey()`: La chiave del canale di vendita Shopify, necessaria per filtrare i prodotti da esportare. Il
+  prodotto ha nella tab `Synchronization Information` una multiselect in cui è possibile selezionare le istanze Shopify
+  in cui esportarlo.
+  ![Shopify Multiselect](assets/shopify-channels-multiselect.png)
 - `getMappedProduct()`: Restituisce il modello specifico del flusso mappato con il prodotto, è possibile escludere il
   dataobject lanciando l'eccezione `IgnoreDataObjectMappingException`
 
 #### Query Prodotti
 
 I prodotti sono selezionati in base alla `modificationDate` con ordinamento crescente. Onde evitare la selezione dei
-medesimi prodotti ogni volta è salvata l'ultima `modificationDate` presa nella tabella settings_store a DB.
+medesimi prodotti ogni volta, è salvata l'ultima `modificationDate` nella tabella settings_store a DB.
+Sono selezionati solo i prodotti `published` e che sono esportabili per un certo canale Shopify.
 Sul modello mappato viene effettuato un hash, salvato sulle note del dataObject e confrontato con l'ultimo calcolato per
 evitare l'invio di un messaggio duplicato ad IPaaS.
 
