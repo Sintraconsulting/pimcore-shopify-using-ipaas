@@ -6,7 +6,6 @@ use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\DataObject\Concrete;
 use Pimcore\Model\DataObject\DefaultProduct;
 use Pimcore\Model\DataObject\Fieldcollection\Data\ImageInfo;
-use Pimcore\Model\DataObject\Product;
 use Pimcore\Tool;
 use SyncShopifyBundle\Model\Product\ShopifyProduct;
 use SyncShopifyBundle\Model\Product\ShopifyProductMedia;
@@ -16,6 +15,7 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
 {
     const DEFAULT_MAPPER_SERVICE_KEY = 'default_shopify_product';
     const PRODUCT_CLASS_ID = 'DEFAULT_PROD';
+    const SHOPIFY_CHANNEL_KEY = 'shopify_1';
 
     public function getMapperServiceKey(): string
     {
@@ -27,9 +27,14 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
         return self::PRODUCT_CLASS_ID;
     }
 
+    public function getShopifyChannelKey(): string
+    {
+        return self::SHOPIFY_CHANNEL_KEY;
+    }
+
     public function getMappedProduct(ShopifyProduct $shopifyProductModel, Concrete $product): ShopifyProduct
     {
-        /** @var Product $product */
+        /** @var DefaultProduct $product */
 
         $shopifyProductModel->setSku($product->getSku());
         $shopifyProductModel->setTitle($product->getName());
@@ -40,7 +45,7 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
         $shopifyProductModel->addMetafield("made_in", $product->getMade_in());
         $shopifyProductModel->addTag($product->getBrand());
 
-        /** @var Product[] $variants */
+        /** @var DefaultProduct[] $variants */
         $variants = $product->getChildren([AbstractObject::OBJECT_TYPE_VARIANT])->load();
         if (!empty($variants)) {
             $shopifyProductModel->addVariants($this->getVariants($variants));
@@ -63,14 +68,14 @@ class DefaultShopifyProductMapper implements IShopifyProductMapper
 
         /** @var ImageInfo $image */
         foreach ($images->getItems() as $image) {
-            $medias[] = new ShopifyProductMedia(Tool::getHostUrl() . $image->getImage()->getRealFullPath(), $image->getImage()->getFilename());
+            $medias[] = new ShopifyProductMedia(Tool::getHostUrl() . $image->getImage()->getFrontendFullPath(), $image->getImage()->getFilename());
         }
 
         return $medias;
     }
 
     /**
-     * @param Product[] $variants
+     * @param DefaultProduct[] $variants
      * @return ShopifyProductVariant[]
      */
     private function getVariants(array $variants): array

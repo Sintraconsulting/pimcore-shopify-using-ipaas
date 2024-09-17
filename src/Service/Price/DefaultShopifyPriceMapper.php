@@ -10,6 +10,7 @@ class DefaultShopifyPriceMapper implements IShopifyPriceMapper
 {
     const DEFAULT_MAPPER_SERVICE_KEY = 'default_shopify_price';
     const PRODUCT_CLASS_ID = 'DEFAULT_PROD';
+    const SHOPIFY_CHANNEL_KEY = 'shopify_1';
 
     public function getMapperServiceKey(): string
     {
@@ -19,6 +20,11 @@ class DefaultShopifyPriceMapper implements IShopifyPriceMapper
     public function getProductClassId(): string
     {
         return self::PRODUCT_CLASS_ID;
+    }
+
+    public function getShopifyChannelKey(): string
+    {
+        return self::SHOPIFY_CHANNEL_KEY;
     }
 
     public function getMappedPrice(ShopifyPrice $shopifyPriceModel, Concrete $product): ShopifyPrice

@@ -7,6 +7,9 @@ use Psr\Log\LoggerInterface;
 
 class AbstractShopifyService
 {
+    const ALIAS_ID = 'id';
+    const ALIAS_MOST_RECENT_MODIFICATION_DATE = 'mostRecentModificationDate';
+
     const ETAG_SUFFIX = '_etag';
     const LAST_MODIFICATION_DATE_SUFFIX = '_last_modification_date';
     const SETTINGS_STORE_SCOPE = 'SyncShopifyBundle';
@@ -87,22 +90,25 @@ class AbstractShopifyService
         return $oldEtag != $newEtag || empty($oldEtag);
     }
 
-    protected function getProductIds(string $productClassId, string $mapperServiceKey): array
+    protected function getProductIds(string $productClassId, string $mapperServiceKey, string $salesChannelKey): array
     {
         $lastModificationDate = $this->getLastModificationDate($mapperServiceKey);
+        $aliasId = self::ALIAS_ID;
+        $aliasMostRecentModificationDate = self::ALIAS_MOST_RECENT_MODIFICATION_DATE;
+        $salesChannelKey = ",$salesChannelKey,";
 
         return $this->connection->fetchAllAssociative("
-            SELECT obj.id, MAX(GREATEST(obj.modificationDate, var.modificationDate)) AS mostRecentModificationDate
-            FROM objects obj
-            INNER JOIN objects var ON obj.id = var.parentId
-            WHERE obj.classId = ?
-                AND obj.type = 'object'
+            SELECT obj.id AS $aliasId, MAX(GREATEST(obj.modificationDate, IFNULL(var.modificationDate, 0))) AS $aliasMostRecentModificationDate
+            FROM object_$productClassId obj
+            LEFT JOIN object_$productClassId var ON obj.id = var.parentId
+            WHERE obj.type = 'object'
                 AND (var.modificationDate > ? OR obj.modificationDate > ?)
+                AND obj.shopifyChannels LIKE '%$salesChannelKey%'
+                AND obj.published = 1
             GROUP BY obj.id
-            ORDER BY mostRecentModificationDate ASC
-            LIMIT 5000;
+            ORDER BY $aliasMostRecentModificationDate ASC
+            LIMIT 10000;
         ", [
-            $productClassId,
             $lastModificationDate,
             $lastModificationDate
         ]);

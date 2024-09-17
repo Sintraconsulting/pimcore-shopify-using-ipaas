@@ -33,27 +33,27 @@ class ShopifyProductService extends AbstractShopifyService
         $mapperService = $this->getMapperService($mapperServiceKey);
         $productClassId = $mapperService->getProductClassId();
 
-        $productIds = $this->getProductIds($productClassId, $mapperServiceKey);
+        $productIds = $this->getProductIds($productClassId, $mapperServiceKey, $mapperService->getShopifyChannelKey());
 
         $newModificationDate = null;
         $mappedProducts = [];
         foreach ($productIds as $productId) {
             try {
-                $product = Concrete::getById($productId['id'], ['force' => true]);
+                $product = Concrete::getById($productId[self::ALIAS_ID], ['force' => true]);
                 $shopifyModelArray = $this->getMappedProductArray($mapperService, $product);
 
-                if ($this->upsertProductEtag($productId['id'], $shopifyModelArray, $mapperServiceKey)) {
+                if ($this->upsertProductEtag($productId[self::ALIAS_ID], $shopifyModelArray, $mapperServiceKey)) {
                     $mappedProducts[] = $shopifyModelArray;
                 }
 
-                $newModificationDate = $productId['mostRecentModificationDate'];
+                $newModificationDate = $productId[self::ALIAS_MOST_RECENT_MODIFICATION_DATE];
                 if (count($mappedProducts) == $limit) {
                     break;
                 }
             } catch (IgnoreDataObjectMappingException) {
                 // Do nothing
             } catch (Throwable $th) {
-                $this->logger->error("Error mapping product id: {$productId['id']}, mapper service key: {$mapperServiceKey}, 
+                $this->logger->error("Error mapping product id: {$productId[self::ALIAS_ID]}, mapper service key: {$mapperServiceKey}, 
                 error message: {$th->getMessage()}");
             }
         }
