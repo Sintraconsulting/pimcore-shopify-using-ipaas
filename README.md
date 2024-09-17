@@ -37,6 +37,7 @@ I metodi da implementare sono:
 - `getShopifyChannelKey()`: La chiave del canale di vendita Shopify, necessaria per filtrare i prodotti da esportare. Il
   prodotto ha nella tab `Synchronization Information` una multiselect in cui è possibile selezionare le istanze Shopify
   in cui esportarlo.
+
   ![Shopify Multiselect](assets/shopify-channels-multiselect.png)
 - `getMappedProduct()`: Restituisce il modello specifico del flusso mappato con il prodotto, è possibile escludere il
   dataobject lanciando l'eccezione `IgnoreDataObjectMappingException`
