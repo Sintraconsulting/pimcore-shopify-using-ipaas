@@ -2,7 +2,7 @@
     "id": "DEFAULT_PROD",
     "title": "",
     "description": "",
-    "modificationDate": 1725282740,
+    "modificationDate": 1726559550,
     "parentClass": "",
     "implementsInterfaces": "",
     "listingParentClass": "",
@@ -1454,6 +1454,47 @@
                         "bodyStyle": "",
                         "datatype": "layout",
                         "children": [
+                            {
+                                "name": "shopifyChannels",
+                                "title": "Shopify Channels",
+                                "tooltip": "",
+                                "mandatory": false,
+                                "noteditable": false,
+                                "index": false,
+                                "locked": false,
+                                "style": "",
+                                "permissions": null,
+                                "fieldtype": "multiselect",
+                                "relationType": false,
+                                "invisible": false,
+                                "visibleGridView": false,
+                                "visibleSearch": false,
+                                "options": [
+                                    {
+                                        "key": "Shopify 1",
+                                        "value": "shopify_1"
+                                    },
+                                    {
+                                        "key": "Shopify 2",
+                                        "value": "shopify_2"
+                                    },
+                                    {
+                                        "key": "Shopify 3",
+                                        "value": "shopify_3"
+                                    }
+                                ],
+                                "maxItems": null,
+                                "renderType": "tags",
+                                "dynamicOptions": false,
+                                "defaultValue": null,
+                                "height": "",
+                                "width": "",
+                                "defaultValueGenerator": "",
+                                "optionsProviderType": "configure",
+                                "optionsProviderClass": "",
+                                "optionsProviderData": "",
+                                "datatype": "data"
+                            },
                             {
                                 "name": "localizedfields",
                                 "title": "Handle",

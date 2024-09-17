@@ -15,5 +15,7 @@ interface IShopifyTranslationMapper
 
     public function getProductClassId(): string;
 
+    public function getShopifyChannelKey(): string;
+
     public function getMappedTranslation(ShopifyTranslation $shopifyTranslationModel, Concrete $product): ShopifyTranslation;
 }

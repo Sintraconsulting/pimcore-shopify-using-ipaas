@@ -4,7 +4,9 @@ namespace SyncShopifyBundle\Service\Price;
 
 use Doctrine\DBAL\Connection;
 use Exception;
+use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\DataObject\Concrete;
+use Pimcore\Model\DataObject\DefaultProduct;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
 use SyncShopifyBundle\Abstract\AbstractShopifyService;
@@ -33,27 +35,39 @@ class ShopifyPriceService extends AbstractShopifyService
         $mapperService = $this->getMapperService($mapperServiceKey);
         $productClassId = $mapperService->getProductClassId();
 
-        $productIds = $this->getProductIds($productClassId, $mapperServiceKey);
+        $productIds = $this->getProductIds($productClassId, $mapperServiceKey, $mapperService->getShopifyChannelKey());
 
         $newModificationDate = null;
         $mappedProducts = [];
         foreach ($productIds as $productId) {
             try {
-                $product = Concrete::getById($productId['id'], ['force' => true]);
-                $shopifyModelArray = $this->getMappedPriceArray($mapperService, $product);
+                $product = Concrete::getById($productId[self::ALIAS_ID], ['force' => true]);
+                /** @var DefaultProduct[] $variants */
+                $variants = $product->getChildren([AbstractObject::OBJECT_TYPE_VARIANT])->load();
+                if (!empty($variants)) {
+                    foreach ($variants as $variant) {
+                        $shopifyModelArray = $this->getMappedPriceArray($mapperService, $variant);
 
-                if ($this->upsertProductEtag($productId['id'], $shopifyModelArray, $mapperServiceKey)) {
-                    $mappedProducts[] = $shopifyModelArray;
+                        if ($this->upsertProductEtag($variant->getId(), $shopifyModelArray, $mapperServiceKey)) {
+                            $mappedProducts[] = $shopifyModelArray;
+                        }
+                    }
+                } else {
+                    $shopifyModelArray = $this->getMappedPriceArray($mapperService, $product);
+
+                    if ($this->upsertProductEtag($product->getId(), $shopifyModelArray, $mapperServiceKey)) {
+                        $mappedProducts[] = $shopifyModelArray;
+                    }
                 }
 
-                $newModificationDate = $productId['mostRecentModificationDate'];
+                $newModificationDate = $productId[self::ALIAS_MOST_RECENT_MODIFICATION_DATE];
                 if (count($mappedProducts) == $limit) {
                     break;
                 }
             } catch (IgnoreDataObjectMappingException) {
                 // Do nothing
             } catch (Throwable $th) {
-                $this->logger->error("Error mapping product id: {$productId['id']}, mapper service key: {$mapperServiceKey}, 
+                $this->logger->error("Error mapping product id: {$productId[self::ALIAS_ID]}, mapper service key: {$mapperServiceKey}, 
                 error message: {$th->getMessage()}");
             }
         }
@@ -75,24 +89,6 @@ class ShopifyPriceService extends AbstractShopifyService
         }
 
         return $service;
-    }
-
-    protected function getProductIds(string $productClassId, string $mapperServiceKey): array
-    {
-        $lastModificationDate = $this->getLastModificationDate($mapperServiceKey);
-
-        return $this->connection->fetchAllAssociative("
-            SELECT obj.id, obj.modificationDate AS mostRecentModificationDate
-            FROM objects obj
-            WHERE obj.classId = ?
-                AND obj.type IN  ('object', 'variant')
-                AND obj.modificationDate > ?
-            ORDER BY mostRecentModificationDate ASC
-            LIMIT 5000;
-        ", [
-            $productClassId,
-            $lastModificationDate
-        ]);
     }
 
     private function getMappedPriceArray(IShopifyPriceMapper $mapperService, Concrete $product): array

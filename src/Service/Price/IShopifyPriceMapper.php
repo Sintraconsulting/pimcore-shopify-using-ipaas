@@ -15,5 +15,7 @@ interface IShopifyPriceMapper
 
     public function getProductClassId(): string;
 
+    public function getShopifyChannelKey(): string;
+
     public function getMappedPrice(ShopifyPrice $shopifyPriceModel, Concrete $product): ShopifyPrice;
 }

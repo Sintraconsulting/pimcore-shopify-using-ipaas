@@ -15,5 +15,7 @@ interface IShopifyProductMapper
 
     public function getProductClassId(): string;
 
+    public function getShopifyChannelKey(): string;
+
     public function getMappedProduct(ShopifyProduct $shopifyProductModel, Concrete $product): ShopifyProduct;
 }
